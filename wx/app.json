@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/search/search",
+    "pages/translate/translate",
+    "pages/Abc/Abc",
+    "pages/notebook/notebook",
+    "pages/result/result",
+    "pages/dict/dict",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#d81e06",
+    "navigationBarTitleText": "Fragment English",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color":"#8a8a8a",
+    "selectedColor": "#d81e06",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/search-select.png",
+        "iconPath": "images/search.png",
+        "pagePath": "pages/search/search",
+        "text": "查询"
+      },
+      {
+        "selectedIconPath": "images/translate-select.png",
+        "iconPath": "images/translate.png",
+        "pagePath": "pages/translate/translate",
+        "text": "翻译"
+      },
+      {
+        "selectedIconPath": "images/Abc-select.png",
+        "iconPath": "images/Abc.png",
+        "pagePath": "pages/Abc/Abc",
+        "text": "背单词"
+      },
+      {
+        "selectedIconPath": "images/notebook-select.png",
+        "iconPath": "images/notebook.png",
+        "pagePath": "pages/notebook/notebook",
+        "text": "生词本"
+      }
+    ]
+  }
+}

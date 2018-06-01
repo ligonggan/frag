@@ -1,0 +1,33 @@
+/* pages/notebook/notebook.wxss */
+.container {
+  padding: 0 30rpx;
+}
+.wordlist{
+  width: 100%;
+}
+.indexlist{
+  margin-top: 15rpx;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail{
+  size: 10px;
+  font-family: "iconfont" !important;
+  font-size: 40rpx;
+  color: #d81e06;
+}
+.worditemlist{
+  margin: 0 30rpx;
+}
+.itemdetail{
+  font-size: 14px;
+}
+.indexchar{
+  font-size: 18px;
+}
+.item{
+  border-bottom: 1px solid rgb(200, 200, 200);
+}

@@ -1,0 +1,31 @@
+<!--pages/result/result.wxml-->
+<view class="query">
+  <text class="queryitem">{{query}}</text>
+  <icon wx:if="{{selected==1}}" class="light hasseelcted iconfont icon-light" bindtap="changesel"></icon>
+  <icon wx:if="{{selected==0}}" bindtap="changesel"class="light iconfont icon-light"></icon>
+  <view class="pron" wx:if="{{exist}}">
+    <icon wx:if="{{ukphon.length>1}}" bindtap="playuk"class="voice iconfont icon-voice"></icon>
+    <text wx:if="{{ukphon.length>1}}" class='pronde'>英\</text>
+      <text wx:if="{{ukphon.length>1}}">{{ukphon}}</text>
+      <audio action="{{action}}" id="myAudio" src='{{tspeakurl}}'/>
+    <text wx:if="{{ukphon.length>1}}"  class='pronde'>\</text>
+  <icon wx:if="{{usphon.length>1}}" class="voice iconfont icon-voice"></icon>
+  <text wx:if="{{usphon.length>1}}" class='pronde'>美\</text>
+  <text wx:if="{{usphon.length>1}}">{{usphon}}</text>
+  <text wx:if="{{usphon.length>1}}" class='pronde'>\</text>
+  </view>
+</view>
+<view class="translation">
+<text class="hint">【翻译】</text>
+<view  wx:for="{{explains}}"wx:for-item="item" >
+<text class="hint">{{item}}</text>
+</view>
+</view>
+<view class="web">
+<text class="hint">【网络释义】</text>
+<view  wx:for="{{web}}"wx:for-item="item" >
+<text class="hint">{{item.key}}</text>
+<text class="hint space">:</text>
+<text class="hint">{{item.value}}</text>
+</view>
+</view>

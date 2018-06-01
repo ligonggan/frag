@@ -1,0 +1,28 @@
+<!--pages/search/search.wxml-->
+<view>
+<view class='page_row'><!--  bindtap="suo" -->  
+  <view class="search">  
+    <view class="df search_arr">  
+      <icon class="searchcion" size='20' type='search'></icon>  
+      <input class="search_text" placeholder="请输入关键字" name="search" bindinput='searchValue'onAction />  
+    </view>  
+  </view>  
+  <view class='sousuo'bindtap="search">搜索</view>  
+</view>  
+<view class ="daysentence">
+  <view>
+    <strong class="title">每日一句 </strong>
+  </view>
+  <text class="sentence">{{ sentence}}\r\n</text>
+  <text class="sentencetran">{{ translate}}\r\n</text>
+</view>
+<view class='history'>
+  <strong class="title">历史记录</strong>
+  <view class="historylist"wx:for="{{items}}" wx:for-index="index" wx:for-item="item">
+    <view class='historyitem'>
+    <icon size='13' type='search'></icon>  
+    <text class='item-detail'>{{item}}</text>
+    </view>
+  </view>
+</view>
+</view>

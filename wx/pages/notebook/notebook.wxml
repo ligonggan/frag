@@ -1,0 +1,15 @@
+<!--pages/notebook/notebook.wxml-->
+<view class="container">
+  <view class="wordlist" wx:for="{{wordlist}}" wx:for-item="word" wx:key="chara[index]">
+    <view class="indexlist">
+      <text class="indexchar">{{chara[index]}}</text>
+      <icon class="detail icon-hide" bindtap="hide" wx:if="{{show[index]}}"  data-index="{{index}}"></icon>
+      <icon class="detail icon-show" bindtap="show" wx:else data-index="{{index}}"></icon>
+    </view>
+    <view class="worditemlist" wx:if="{{show[index]}}" wx:for="{{word}}" wx:for-index="index2" wx:for-item="worditem" wx:key="worditem">
+      <view class="item">
+        <text class='itemdetail'>{{worditem}}</text>
+      </view>
+    </view>
+  </view>
+</view>

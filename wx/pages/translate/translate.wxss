@@ -1,0 +1,41 @@
+/* pages/translate/translate.wxss */
+page{
+  background-color: rgb(240,240,235);
+}
+.set{
+  display: flex;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  width: 100%;
+  height: 2.5em;
+  align-items: center;
+}
+.left, .center, .right{
+  text-align: center;
+}
+.left, .right {
+  flex-basis: 10em;
+  flex-grow: 1;
+}
+.totranslate{
+  background-color: white;
+}
+.translatere{
+  margin-top: 20px;
+  background-color: white;
+}
+.sure{
+  background-color: #d81e06;
+  color: white;
+  font-size: 13px;
+  z-index: 1;
+  float: right;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+}
+.clear {
+  clear: both;
+}
+textarea {
+  width: auto;
+  padding: 30rpx;
+}

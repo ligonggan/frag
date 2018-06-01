@@ -1,0 +1,18 @@
+<!--pages/translate/translate.wxml-->
+<view>
+  <view class="totranslate">
+    <view class="set">
+      <text wx:if="{{op}}"class='left'>English</text>
+      <text wx:else class='left'>中文</text>
+      <icon class="center iconfont icon-zhiding" bindtap="changelan"></icon>
+      <text wx:if="{{op}}"class='right'>中文</text>
+      <text wx:else class='right'>English</text>
+    </view>
+    <textarea placeholder="请输入要翻译的内容" bindinput='searchValue'auto-focus value="{{totrans}}" />
+    <button class='sure' size='mini' bindtap="trans">translate</button>
+    <view class='clear'></view>
+  </view>
+  <view class="translatere">
+    <textarea placeholder="翻译结果" disabled='disabled' value="{{transre}}"/>
+  </view>
+</view>
