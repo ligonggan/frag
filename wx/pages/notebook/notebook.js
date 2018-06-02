@@ -9,24 +9,6 @@ Page({
     wordlist: [ ['Abc','adc'],['bca'],['cda'],[],[],[],[],[]],
     show:[true,true,false,false,false],
   },
-  show :function (event) {
-    var index = event.currentTarget.dataset.index;
-    console.log(index);
-    var s = 'show[' + index + ']'
-    var param = {};
-    param[s] = true;
-    this.setData(param);
-
-  },
-  hide: function (event) {
-    var index = event.currentTarget.dataset.index;
-    console.log(index);
-    var s = 'show[' + index + ']'
-    var param = {};
-    param[s] = false;
-    this.setData(param);
-
-  },
   /**
    * 生命周期函数--监听页面加载
    */
