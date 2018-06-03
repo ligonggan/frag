@@ -26,8 +26,24 @@ Page({
     })
   },
   onLoad: function (options) {
-
-  
+    //获取历史纪录
+    let that = this;
+    wx.request({
+        url: "http://fragmentenglish.gsxab.top/api/history",
+        method: "POST",
+        header: {
+          'Content-Type': 'json',
+        },
+        data: {
+          userId: this.globalData.userInfo,
+        },
+        success: (res)=>{
+          that.setData({"items": JSON.parse(res.data)});
+        },
+        fail: (res)=>{
+          console.log(res);
+        }
+    });
   },
 
   /**

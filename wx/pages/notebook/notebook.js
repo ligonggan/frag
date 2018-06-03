@@ -1,5 +1,6 @@
 // pages/notebook/notebook.js
 const app = getApp();
+var list = null;
 
 Page({
 
@@ -16,23 +17,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      this.getNotebook((data)=>{this.setData(data);});
+      this.getNotebook();
   },
-  getNotebook: function(callback){
+  getNotebook: function(){//获取生词表
       console.log(app.globalData.userInfo);
+      var that = this;
       //var that=this
       wx.request({
-        url: "https://fragmentenglish.gsxab.top/api/notebooks",
+        url: "http://fragmentenglish.gsxab.top/api/notebooks",
         method: "POST",
-        dataType: "application/json",
+        header: {
+          'Content-Type': 'json',
+        },
         data: {
-          token: app.globalData.userInfo
+          userId: this.globalData.userInfo
         },
         success: (res)=>{
           console.log(res);
           console.log(res.data);
-          this.setData({"wordlist": res.data});
-          callback();
+          list = JSON.parse(res.data);
         },
         fail: (res)=>{
           console.log(res);
