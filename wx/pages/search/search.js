@@ -41,8 +41,7 @@ Page({
           'Content-Type': 'application/json',
         },
         data: {
-          userId: app.globalData.userInfo
-            //userId: '00000000000000000000000000000',
+          userId: app.globalData.userInfo,
         },
         success: (res)=>{
           that.setData({"items": res.data});

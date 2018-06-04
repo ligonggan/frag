@@ -1,6 +1,6 @@
 // pages/notebook/notebook.js
 const app = getApp();
-var list = null;
+var dict = null;
 
 Page({
 
@@ -9,9 +9,8 @@ Page({
    */
   data: {
     chara: [],
-    temp:['A','B','C','D','E','F','G','H','I','J','K','L','M,','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'],
-    wordlist: [ ['Abc','adc'],['bca'],['cda'],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]],
-    //show:[true,true,false,false,false],
+    wordlist: [],
+    show:[true,true,false,false,false],
   },
 
   /**
@@ -19,13 +18,19 @@ Page({
    */
   onLoad: function (options) {
       this.getNotebook();
+      for(var key in dict){
+        let l1 = chara.length;
+        chara[l1] = key;
+        let l2 = wordlist.length;
+        wordlist[l2] = value;
+      }
   },
   getNotebook: function(){//获取生词表
       console.log(app.globalData.userInfo);
       var that = this;
       //var that=this
       wx.request({
-        url: "https://fragmentenglish.gsxab.top/notebooks",
+        url: "https://fragmentenglish.gsxab.top/notebooks_dict",
         method: "POST",
         header: {
           'Content-Type': 'application/json',
@@ -36,21 +41,13 @@ Page({
         success: (res)=>{
           console.log(res);
           console.log(res.data);
-          list = JSON.parse(res.data);
+          dicy = res.data;
         },
         fail: (res)=>{
           console.log(res);
         }
       });
    },
-  // arrage: function(){
-  //   //对生词表进行排列@Raineast
-  //   if(list==null)
-  //     return;
-  //   for(var i=0;i<list.length;i++){
-  //     list[i]
-  //   }
-  // },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

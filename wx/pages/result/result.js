@@ -108,7 +108,7 @@ Page({
 
       wx.request({
           url: "https://fragmentenglish.gsxab.top/history",
-          method: "POST",
+          method: "PUT",
           header: {
               'Content-Type': 'application/json',
           },
