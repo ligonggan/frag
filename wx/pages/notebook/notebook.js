@@ -37,6 +37,8 @@ Page({
           console.log(res.data);
           dict = res.data;
           for(var key in dict){
+              if(key == "")
+                continue;
               let l1 = this.data.chara.length;
               this.data.chara[l1] = key;
               let l2 = this.data.wordlist.length;

@@ -73,8 +73,8 @@ Page({
         if(jj.basic == null)
             that.setData({"available":false});
         if (jj.hasOwnProperty("basic")){
-          that.data.exist=true;
-          that.setData({'exist':true});
+          // that.data.exist=true;
+          // that.setData({'exist':true});
           that.data.explains=jj.basic.explains;
           that.setData({ "explains": jj.basic.explains });
           console.log(that.data.explains);
@@ -107,8 +107,6 @@ Page({
 
   addHistory:function(){
       //添加一条历史记录
-      let that = this;
-
       wx.request({
           url: "https://fragmentenglish.gsxab.top/history",
           method: "PUT",
@@ -139,12 +137,12 @@ Page({
     }else{
         this.add();
     }
-    this.data.selected = 1-this.data.selected;
-    this.setData({ 'selected': this.data.selected });
+    this.setData({ 'selected': 1-this.data.selected });
   },
 
    add: function(){
     //添加单词到生词本@Raineast
+    console.log(this.data.exist);
     if(this.data.available == false)
         return;
     if(this.data.exist == true)
@@ -226,8 +224,9 @@ Page({
            },
            success: (res)=>{
              console.log(app.globalData.userInfo);
+             that.setData({"exist": res.data.found});
              console.log(res);
-             that.setData({"exist": res.found});
+             console.log(that.data.exist);
              if(res.found == true){
                  that.setData({"selected": 1});
              }

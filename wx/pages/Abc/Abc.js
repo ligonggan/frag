@@ -36,6 +36,8 @@ Page({//添加了四个属性@Raineast
       var query = list[idx];     //随机给出需要显示单词的索引
       //对于每个单词重新发送一次查询请求@Raineast
       //搬运于result.js文件
+      if(query=="")
+          return;
       this.setData({'content': query});
       var that=this;
       var appKey = '6d963f5e7cb10b13';
@@ -73,6 +75,8 @@ Page({//添加了四个属性@Raineast
               that.data.translation = jj.translation;
               that.data.tspeakurl = jj.tSpeakUrl;
               that.setData({ "tspeakurl": jj.tSpeakUrl });
+              if(jj.basic == null)
+                  return;
               if (jj.hasOwnProperty("basic")){
                   that.data.exist=true;
                   that.setData({'exist':true});
@@ -135,6 +139,7 @@ Page({//添加了四个属性@Raineast
         },
         success: (res)=>{
           list = res.data;
+          console.log(list)
           this.showTheWord(list);
         },
         fail: (res)=>{

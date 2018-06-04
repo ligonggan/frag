@@ -37,8 +37,8 @@
       <file leaf-file-name="Abc.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/Abc/Abc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="102" column="49" selection-start-line="102" selection-start-column="49" selection-end-line="102" selection-end-column="49" />
+            <state relative-caret-position="3297">
+              <caret line="157" column="18" lean-forward="true" selection-start-line="157" selection-start-column="18" selection-end-line="157" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -46,8 +46,8 @@
       <file leaf-file-name="notebook.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/notebook/notebook.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="31" column="15" lean-forward="true" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
+            <state relative-caret-position="441">
+              <caret line="48" column="42" lean-forward="true" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -55,8 +55,17 @@
       <file leaf-file-name="notebook.wxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/notebook/notebook.wxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="52" lean-forward="true" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+            <state relative-caret-position="126">
+              <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="word-list.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/word-list.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2352">
+              <caret column="1373" lean-forward="true" selection-start-column="1373" selection-end-column="1373" />
             </state>
           </provider>
         </entry>
@@ -70,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="result.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="result.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/result/result.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="142" column="53" lean-forward="true" selection-start-line="142" selection-start-column="53" selection-end-line="142" selection-end-column="53" />
+            <state relative-caret-position="1008">
+              <caret line="87" column="35" selection-start-line="87" selection-start-column="35" selection-end-line="87" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -116,9 +125,9 @@
         <option value="$PROJECT_DIR$/pages/translate/translate.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/pages/search/search.js" />
+        <option value="$PROJECT_DIR$/pages/result/result.js" />
         <option value="$PROJECT_DIR$/pages/Abc/Abc.js" />
         <option value="$PROJECT_DIR$/pages/notebook/notebook.js" />
-        <option value="$PROJECT_DIR$/pages/result/result.js" />
       </list>
     </option>
   </component>
@@ -277,16 +286,15 @@
       <workItem from="1528074876495" duration="949000" />
       <workItem from="1528079347176" duration="989000" />
       <workItem from="1528097973457" duration="7201000" />
-      <workItem from="1528114872894" duration="6996000" />
+      <workItem from="1528114872894" duration="9086000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40671000" />
+    <option name="totallyTimeSpent" value="42761000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -604,13 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/word-list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/translate/translate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -639,34 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/result/result.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Abc/Abc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="102" column="49" selection-start-line="102" selection-start-column="49" selection-end-line="102" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/notebook/notebook.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="52" lean-forward="true" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/notebook/notebook.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="31" column="15" lean-forward="true" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/search/search.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -674,10 +647,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/result/result.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/notebook/notebook.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/result/result.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="142" column="53" lean-forward="true" selection-start-line="142" selection-start-column="53" selection-end-line="142" selection-end-column="53" />
+        <state relative-caret-position="1008">
+          <caret line="87" column="35" selection-start-line="87" selection-start-column="35" selection-end-line="87" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/Abc/Abc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3297">
+          <caret line="157" column="18" lean-forward="true" selection-start-line="157" selection-start-column="18" selection-end-line="157" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/notebook/notebook.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="48" column="42" lean-forward="true" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/word-list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2352">
+          <caret column="1373" lean-forward="true" selection-start-column="1373" selection-end-column="1373" />
         </state>
       </provider>
     </entry>
