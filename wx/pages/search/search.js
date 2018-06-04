@@ -1,4 +1,5 @@
 // pages/search/search.js
+const app = getApp();
 Page({
 
   /**
@@ -28,17 +29,23 @@ Page({
   onLoad: function (options) {
     //获取历史纪录
     let that = this;
+    // wx.reauest({
+    //     url: "https://fragmentenglish.gsxab.top/fake_login",
+    //     method: 'POST',
+    //     header: {},
+    // });
     wx.request({
-        url: "http://fragmentenglish.gsxab.top/api/history",
+        url: "https://fragmentenglish.gsxab.top/history",
         method: "POST",
         header: {
-          'Content-Type': 'json',
+          'Content-Type': 'application/json',
         },
         data: {
-          userId: this.globalData.userInfo,
+          userId: app.globalData.userInfo
+            //userId: '00000000000000000000000000000',
         },
         success: (res)=>{
-          that.setData({"items": JSON.parse(res.data)});
+          that.setData({"items": res.data});
         },
         fail: (res)=>{
           console.log(res);

@@ -103,21 +103,22 @@ Page({
   },
 
   addHistory:function(){
+      //添加一条历史记录
       let that = this;
 
       wx.request({
-          url: "http://fragmentenglish.gsxab.top/api/history",
+          url: "https://fragmentenglish.gsxab.top/history",
           method: "POST",
           header: {
-              'Content-Type': 'json',
+              'Content-Type': 'application/json',
           },
           data: {
-              userId: this.globalData.userInfo,
+              userId: app.globalData.userInfo,
               word: this.data.query,
           },
           success: (res)=>{
               console.log(res);
-              console.log(that.globalData.userInfo);
+              console.log(app.globalData.userInfo);
           },
           fail: (res)=>{
               console.log(res);
@@ -143,18 +144,18 @@ Page({
     let that = this;
     let word = this.data.query;
 
-    console.log(this.globalData.userInfo);
+    console.log(app.globalData.userInfo);
     wx.request({
-        url: "http://fragmentenglish.gsxab.top/api/notebooks/"+word,
-        method: "POST",
+        url: "https://fragmentenglish.gsxab.top/notebooks/"+word,
+        method: "PUT",
         header: {
-          'Content-Type': 'json',
+          'Content-Type': 'application/json',
         },
         data: {
-          userId: this.globalData.userInfo,
+          userId: app.globalData.userInfo,
         },
         success: (res)=>{
-          console.log(that.globalData.userInfo);
+          console.log(app.globalData.userInfo);
           console.log(res);
         },
         fail: (res)=>{
@@ -167,18 +168,18 @@ Page({
     //从生词本中删除@Raineast
     let that = this;
     let word = this.data.query;
-    console.log(this.globalData.userInfo);
+    console.log(app.globalData.userInfo);
     wx.request({
-       url:  "http://fragmentenglish.gsxab.top/api/notebooks/delete/"+word,
+       url:  "https://fragmentenglish.gsxab.top/notebooks/delete/"+word,
        method: "POST",
        header: {
-         'Content-Type': 'json',
+         'Content-Type': 'application/json',
        },
        data: {
-         userId: this.globalData.userInfo,
+         userId: app.globalData.userInfo,
        },
        success: (res)=>{
-         console.log(that.globalData.userInfo);
+         console.log(app.globalData.userInfo);
          console.log(res);
        },
        fail: (res)=>{
@@ -206,14 +207,14 @@ Page({
        let word = this.data.query;//获取单词
        console.log(app.globalData.userInfo);
        wx.request({
-           url: "http://fragmentenglish.gsxab.top/api/notebooks/exist/"+word,
+           url: "https://fragmentenglish.gsxab.top/notebooks/exist/"+word,
            method: "POST",
-           header: {'Content-Type': 'json'},
+           header: {'Content-Type': 'application/json'},
            data: {
-             userId: this.globalData.userInfo,
+             userId: app.globalData.userInfo,
            },
            success: (res)=>{
-             console.log(that.globalData.userInfo);
+             console.log(app.globalData.userInfo);
              console.log(res);
              that.setData({"exist": res.found});
            },

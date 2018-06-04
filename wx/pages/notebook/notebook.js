@@ -8,9 +8,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    chara:['A','B','C','D','E','F','G','H'],
-    wordlist: [ ['Abc','adc'],['bca'],['cda'],[],[],[],[],[]],
-    show:[true,true,false,false,false],
+    chara: [],
+    temp:['A','B','C','D','E','F','G','H','I','J','K','L','M,','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'],
+    wordlist: [ ['Abc','adc'],['bca'],['cda'],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]],
+    //show:[true,true,false,false,false],
   },
 
   /**
@@ -24,13 +25,13 @@ Page({
       var that = this;
       //var that=this
       wx.request({
-        url: "http://fragmentenglish.gsxab.top/api/notebooks",
+        url: "https://fragmentenglish.gsxab.top/notebooks",
         method: "POST",
         header: {
-          'Content-Type': 'json',
+          'Content-Type': 'application/json',
         },
         data: {
-          userId: this.globalData.userInfo
+          userId: app.globalData.userInfo
         },
         success: (res)=>{
           console.log(res);
@@ -41,7 +42,15 @@ Page({
           console.log(res);
         }
       });
-  },
+   },
+  // arrage: function(){
+  //   //对生词表进行排列@Raineast
+  //   if(list==null)
+  //     return;
+  //   for(var i=0;i<list.length;i++){
+  //     list[i]
+  //   }
+  // },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

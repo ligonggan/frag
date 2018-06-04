@@ -38,6 +38,8 @@ App({
         }
       }
     })
+    if(this.globalData.userInfo==null)
+      this.globalData.userInfo = "0000000000000000000000000000";
   },
   globalData: {
     userInfo: null
