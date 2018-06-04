@@ -36,6 +36,7 @@ Page({//添加了四个属性@Raineast
       var query = list[idx];     //随机给出需要显示单词的索引
       //对于每个单词重新发送一次查询请求@Raineast
       //搬运于result.js文件
+      this.setData({'content': query});
       var that=this;
       var appKey = '6d963f5e7cb10b13';
       var key = 'oWLnbiqEGyUsZLNGwt73RiL5VReRNZLA';//注意：暴露appSecret，有被盗用造成损失的风险
@@ -62,12 +63,57 @@ Page({//添加了四个属性@Raineast
               to: to,
               sign: sign
           },//搬运完毕
-          success: (res)=>{
-              var jsonStr = res.data.replace(/\ufeff/g, "");
+          success: (data)=>{
+              var jsonStr = data.data.replace(/\ufeff/g, "");
               var jj = JSON.parse(jsonStr);
-              that.setData({'content': query});
-              that.setData({'definition': jj.basic.explains});
-              that.setData({'pron': jj.basci.phon});
+              console.log(jj);
+              //that.setData({ "query": jj.query });
+              //that.data.query=jj.query;
+              that.setData({ "translation": jj.translation });
+              that.data.translation = jj.translation;
+              that.data.tspeakurl = jj.tSpeakUrl;
+              that.setData({ "tspeakurl": jj.tSpeakUrl });
+              if (jj.hasOwnProperty("basic")){
+                  that.data.exist=true;
+                  that.setData({'exist':true});
+                  that.data.explains=jj.basic.explains;
+                  that.setData({ "explains": jj.basic.explains });
+                  console.log(that.data.explains);
+                  that.data.ukphon = jj.basic['uk-phonetic'];
+                  that.setData({ 'ukphon': jj.basic['uk-phonetic'] });
+                  that.data.phon = jj.basic['phonetic'];
+                  that.setData({ 'phon': jj.basic['phonetic'] });
+                  that.data.usphon = jj.basic['us-phonetic'];
+                  that.setData({ 'usphon': jj.basic['us-phonetic'] });
+                  that.data.ukspeech = jj.basic['uk-speech'];
+                  that.setData({ 'ukspeech': jj.basic['uk-speech'] });
+                  that.data.usspeech = jj.basic['us-speech'];
+                  that.setData({ 'usspeech': jj.basic['us-speech'] });
+              }
+              if (jj.hasOwnProperty("web")) {
+                  that.data.web=jj.web
+                  that.setData({ 'web': jj.web});
+              }
+              that.data.webdict=jj.webdict
+              that.data.dict.push=jj.dict
+              that.setData({ 'webdict': jj.webdict });
+              that.setData({ 'dict': jj.dict });
+              that.setData({'definition': that.data.explains});
+              if(jj.basic.explains == null)
+                  that.setData({'explains': ""});
+              if(that.data.phon != null){
+                  that.setData({'pron': that.data.phon});
+                  return;
+              }
+              else if(that.data.ukphon != null){
+                  that.setData({'pron': that.data.ukphon});
+                  return;
+              }else if(that.data.usphon != null){
+                  that.setData({'pron': that.data.usphon});
+                  return;
+              }else{
+                  that.setData({'pron': " "});
+              }
           },
           fail: (res)=>{
               console.log(app.globalData.userInfo);
@@ -103,58 +149,19 @@ Page({//添加了四个属性@Raineast
     })
   },
 
-  next: function () {
+  next: function (list) {
     this.setData({
-      showNot: false
-    })
-    var idx = Math.floor(Math.random() * Math.floor(list.length));
-    var query = list[idx];
-
-    var that=this;
-    var appKey = '6d963f5e7cb10b13';
-    var key = 'oWLnbiqEGyUsZLNGwt73RiL5VReRNZLA';//注意：暴露appSecret，有被盗用造成损失的风险
-    var salt = (new Date).getTime();
-    // 多个query可以用\n连接  如 query='apple\norange\nbanana\npear'
-    var from = 'en';
-    var to = 'zh-CHS';
-    var reg = /^[\u4e00-\u9fa5]+$/;
-    if (reg.test(query)) {
-        from = 'zh-CHS';
-        to = 'en';
-    }
-    var str1 = appKey + query + salt + key;
-    var sign = util.md5(str1);
-    wx.request({
-        url: 'https://openapi.youdao.com/api',
-        type: 'post',
-        dataType: 'jsonp',
-        data: {
-            q: query,
-            appKey: appKey,
-            salt: salt,
-            from: from,
-            to: to,
-            sign: sign
-        },//搬运完毕
-        success: (res)=>{
-            var jsonStr = data.data.replace(/\ufeff/g, "");
-            var jj = JSON.parse(jsonStr);
-            that.setData({'content': query});
-            that.setData({'definition': jj.basic.explains});
-            that.setData({'pron': jj.basci.phon});
-        },
-        fail: (res)=>{
-            console.log(app.globalData.userInfo);
-            console.log(res);
-        }
+      show: false
     });
+    this.getWordList();
 
-    this.setData({
-      content: word.content,
-      pron: word.pron,
-      definition: word.definition,
-      audio: word.audio
-    })
+
+    // this.setData({
+    //   content: word.content,
+    //   pron: word.pron,
+    //   definition: word.definition,
+    //   audio: word.audio
+    // })
 
   }
 })

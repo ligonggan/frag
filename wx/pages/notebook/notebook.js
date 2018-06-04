@@ -18,12 +18,6 @@ Page({
    */
   onLoad: function (options) {
       this.getNotebook();
-      for(var key in dict){
-        let l1 = chara.length;
-        chara[l1] = key;
-        let l2 = wordlist.length;
-        wordlist[l2] = value;
-      }
   },
   getNotebook: function(){//获取生词表
       console.log(app.globalData.userInfo);
@@ -41,7 +35,16 @@ Page({
         success: (res)=>{
           console.log(res);
           console.log(res.data);
-          dicy = res.data;
+          dict = res.data;
+          for(var key in dict){
+              let l1 = this.data.chara.length;
+              this.data.chara[l1] = key;
+              let l2 = this.data.wordlist.length;
+              this.data.wordlist[l2] = dict[key];
+          }
+          console.log(dict);
+          console.log(this.data.chara);
+          console.log(this.data.wordlist);
         },
         fail: (res)=>{
           console.log(res);

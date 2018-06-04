@@ -8,6 +8,7 @@ Page({
    */
   data: {
     selected:0,
+    available:true,
     exist:false,
     query:"",
     translation:"",
@@ -29,9 +30,10 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) { 
+  onLoad: function (options) {
     var query=options.query;
     this.setData({'query':query});
+    this.judgeIfExist();//此处判断单词是否存在于用户记录中@Raineast
     var that=this;
     var appKey = '6d963f5e7cb10b13';
     var key = 'oWLnbiqEGyUsZLNGwt73RiL5VReRNZLA';//注意：暴露appSecret，有被盗用造成损失的风险
@@ -68,6 +70,8 @@ Page({
         that.data.translation = jj.translation;
         that.data.tspeakurl = jj.tSpeakUrl;
         that.setData({ "tspeakurl": jj.tSpeakUrl });
+        if(jj.basic == null)
+            that.setData({"available":false});
         if (jj.hasOwnProperty("basic")){
           that.data.exist=true;
           that.setData({'exist':true});
@@ -99,7 +103,6 @@ Page({
       }
     });
     this.addHistory();  //此处进行添加历史记录的操作
-    this.judgeIfExist();//此处判断单词是否存在于用户记录中@Raineast
   },
 
   addHistory:function(){
@@ -127,6 +130,8 @@ Page({
   },
 
   changesel:function (event) {
+    if(this.data.available == false)
+        return;
     this.data.selected = 1-this.data.selected;
     this.setData({ 'selected': this.data.selected });
     //此处添加消除/增加生词的请求操作@Raineast
@@ -141,6 +146,8 @@ Page({
 
    add: function(){
     //添加单词到生词本@Raineast
+    if(this.data.available == false)
+        return;
     let that = this;
     let word = this.data.query;
 
@@ -166,6 +173,7 @@ Page({
 
   remove: function(){
     //从生词本中删除@Raineast
+    //if(this.data)
     let that = this;
     let word = this.data.query;
     console.log(app.globalData.userInfo);
@@ -203,6 +211,8 @@ Page({
 
    judgeIfExist: function(){
       //判断单词是否包含在生词本里 @Raineast
+       if(this.data.available == false)
+           return;
        let that = this;
        let word = this.data.query;//获取单词
        console.log(app.globalData.userInfo);
@@ -217,14 +227,17 @@ Page({
              console.log(app.globalData.userInfo);
              console.log(res);
              that.setData({"exist": res.found});
+             if(res.found == true){
+                 that.setData({"selected": 1});
+             }
            },
            fail: (res)=>{
              console.log(res);
            }
        });
-       if(this.data.exist){//如果单词存在，那么将单词设为选中状态
-         this.setData({"selected": 1});
-       }
+       // if(this.data.exist == true){//如果单词存在，那么将单词设为选中状态
+       //   this.setData({"selected": 1});
+       // }
    },
 
   /**
