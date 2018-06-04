@@ -132,21 +132,22 @@ Page({
   changesel:function (event) {
     if(this.data.available == false)
         return;
+    //判断是增加还是消除
+    //此处添加消除/增加生词的请求操作@Raineast
+    if(this.data.selected){
+        this.remove();
+    }else{
+        this.add();
+    }
     this.data.selected = 1-this.data.selected;
     this.setData({ 'selected': this.data.selected });
-    //此处添加消除/增加生词的请求操作@Raineast
-
-    //判断是增加还是消除
-    if(1 - this.data.selected){
-      this.remove();
-    }else{
-      this.add();
-    }
   },
 
    add: function(){
     //添加单词到生词本@Raineast
     if(this.data.available == false)
+        return;
+    if(this.data.exist == true)
         return;
     let that = this;
     let word = this.data.query;
