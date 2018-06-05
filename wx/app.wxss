@@ -10,11 +10,11 @@
 } 
 @font-face {
   font-family: 'iconfont';  /* project id 671895 */
-  src: url('//at.alicdn.com/t/font_671895_8desuk27ovoq1tt9.eot');
-  src: url('//at.alicdn.com/t/font_671895_8desuk27ovoq1tt9.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_671895_8desuk27ovoq1tt9.woff') format('woff'),
-  url('//at.alicdn.com/t/font_671895_8desuk27ovoq1tt9.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_671895_8desuk27ovoq1tt9.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_671895_7hop8s0abfvquxr.eot');
+  src: url('//at.alicdn.com/t/font_671895_7hop8s0abfvquxr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_671895_7hop8s0abfvquxr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_671895_7hop8s0abfvquxr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_671895_7hop8s0abfvquxr.svg#iconfont') format('svg');
 }
 .iconfont {
   font-family:"iconfont" !important;
@@ -29,3 +29,4 @@
 .icon-hide:before{content: '\e72c';}
 .icon-light:before{content: '\e60e';}
 .icon-voice:before{content: '\e661';}
+.icon-logo:before{content: '\e68e';}

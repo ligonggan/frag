@@ -1,5 +1,6 @@
 // pages/search/search.js
 const app = getApp();
+var util = require('../../utils/util.js')
 Page({
 
   /**
@@ -29,11 +30,7 @@ Page({
   onLoad: function (options) {
     //获取历史纪录
     let that = this;
-    // wx.reauest({
-    //     url: "https://fragmentenglish.gsxab.top/fake_login",
-    //     method: 'POST',
-    //     header: {},
-    // });
+    console.log("load first")
     wx.request({
         url: "https://fragmentenglish.gsxab.top/history",
         method: "POST",

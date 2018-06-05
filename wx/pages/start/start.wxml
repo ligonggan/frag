@@ -1,0 +1,5 @@
+<!--pages/start/start.wxml-->
+<view class="logo">
+<image class="avatar" src="{{user.avatarUrl}}" background-size="scaleToFill"></image>  
+</view>
+<button class="button"bindtap="enter"> 进入</button> 

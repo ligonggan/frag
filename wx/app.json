@@ -1,12 +1,11 @@
 {
   "pages":[
+    "pages/start/start",
     "pages/search/search",
     "pages/translate/translate",
     "pages/Abc/Abc",
     "pages/notebook/notebook",
-    "pages/result/result",
-    "pages/dict/dict",
-    "pages/logs/logs"
+    "pages/result/result"
   ],
   "window":{
     "backgroundTextStyle":"light",
