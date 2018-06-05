@@ -132,6 +132,7 @@ Page({
 
   changesel:function (event) {
     console.log(this.data.available)
+    console.log("SELECTED:" + this.data.selected);
     if(this.data.available == false)
         return;
     //判断是增加还是消除
@@ -231,7 +232,7 @@ Page({
              that.setData({"exist": res.data.found});
              console.log(res);
              console.log(that.data.exist);
-             if(res.found == true){
+             if(res.data.found == true){
                  that.setData({"selected": 1});
              }
            },
