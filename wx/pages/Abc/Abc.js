@@ -82,17 +82,30 @@ Page({//添加了四个属性@Raineast
                   that.setData({'exist':true});
                   that.data.explains=jj.basic.explains;
                   that.setData({ "explains": jj.basic.explains });
-                  console.log(that.data.explains);
-                  that.data.ukphon = jj.basic['uk-phonetic'];
-                  that.setData({ 'ukphon': jj.basic['uk-phonetic'] });
-                  that.data.phon = jj.basic['phonetic'];
-                  that.setData({ 'phon': jj.basic['phonetic'] });
-                  that.data.usphon = jj.basic['us-phonetic'];
-                  that.setData({ 'usphon': jj.basic['us-phonetic'] });
-                  that.data.ukspeech = jj.basic['uk-speech'];
-                  that.setData({ 'ukspeech': jj.basic['uk-speech'] });
-                  that.data.usspeech = jj.basic['us-speech'];
-                  that.setData({ 'usspeech': jj.basic['us-speech'] });
+                  if (jj.basic['uk-phonetic'] != null) {
+                    that.data.ukphon = jj.basic['uk-phonetic'];
+                    that.setData({ 'ukphon': jj.basic['uk-phonetic'] });
+                  }
+                  else{
+                    that.data.ukphon = "";
+                    that.setData({ 'ukphon': "" });
+                  }
+                  if (jj.basic['phonetic'] != null) {
+                    that.data.phon = jj.basic['phonetic'];
+                    that.setData({ 'phon': jj.basic['phonetic'] });
+                  }
+                  else{
+                    that.data.phon = ""
+                    that.setData({ 'phon':""});
+                  }
+                  if (jj.basic['us-phonetic'] != null) {
+                    that.data.usphon = jj.basic['us-phonetic'];
+                    that.setData({ 'usphon': jj.basic['us-phonetic'] });
+                  }
+                  else{
+                    that.data.usphon = "";
+                    that.setData({ 'usphon': "" });
+                  }
               }
               if (jj.hasOwnProperty("web")) {
                   that.data.web=jj.web

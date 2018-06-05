@@ -77,17 +77,19 @@ Page({
           // that.setData({'exist':true});
           that.data.explains=jj.basic.explains;
           that.setData({ "explains": jj.basic.explains });
-          console.log(that.data.explains);
-          that.data.ukphon = jj.basic['uk-phonetic'];
-          that.setData({ 'ukphon': jj.basic['uk-phonetic'] });
-          that.data.phon = jj.basic['phonetic'];
-          that.setData({ 'phon': jj.basic['phonetic'] });
+          if (jj.basic['uk-phonetic']!=null){
+            that.data.ukphon = jj.basic['uk-phonetic'];
+            that.setData({ 'ukphon': jj.basic['uk-phonetic'] });
+          }
+          if (jj.basic['phonetic'] != null){
+            that.data.phon = jj.basic['phonetic'];
+            that.setData({ 'phon': jj.basic['phonetic'] });
+          }
+          if (jj.basic['us-phonetic'] != null){
           that.data.usphon = jj.basic['us-phonetic'];
           that.setData({ 'usphon': jj.basic['us-phonetic'] });
-          that.data.ukspeech = jj.basic['uk-speech'];
-          that.setData({ 'ukspeech': jj.basic['uk-speech'] });
-          that.data.usspeech = jj.basic['us-speech'];
-          that.setData({ 'usspeech': jj.basic['us-speech'] });
+          }
+          
         }
         if (jj.hasOwnProperty("web")) {
           that.data.web=jj.web
@@ -102,6 +104,7 @@ Page({
         that.setData({ "query": data.code});
       }
     });
+    console.log(this.data.usphon)
     this.addHistory();  //此处进行添加历史记录的操作
   },
 
@@ -128,6 +131,7 @@ Page({
   },
 
   changesel:function (event) {
+    console.log(this.data.available)
     if(this.data.available == false)
         return;
     //判断是增加还是消除

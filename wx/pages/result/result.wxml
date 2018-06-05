@@ -3,7 +3,7 @@
   <text class="queryitem">{{query}}</text>
   <icon wx:if="{{selected==1}}" class="light hasseelcted iconfont icon-light" bindtap="changesel"></icon>
   <icon wx:if="{{selected==0}}" bindtap="changesel"class="light iconfont icon-light"></icon>
-  <view class="pron" wx:if="{{exist}}">
+  <view class="pron">
     <icon wx:if="{{ukphon.length>1}}" bindtap="playuk"class="voice iconfont icon-voice"></icon>
     <text wx:if="{{ukphon.length>1}}" class='pronde'>英\</text>
       <text wx:if="{{ukphon.length>1}}">{{ukphon}}</text>

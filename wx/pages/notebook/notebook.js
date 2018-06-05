@@ -10,7 +10,6 @@ Page({
   data: {
     chara: [],
     wordlist: [],
-    show:[true,true,false,false,false],
   },
 
   /**
@@ -33,20 +32,21 @@ Page({
           userId: app.globalData.userInfo
         },
         success: (res)=>{
-          console.log(res);
-          console.log(res.data);
+          console.log("***")
+          console.log(res)
           dict = res.data;
+          var chara=[];
+          var wordlist=[];
           for(var key in dict){
               if(key == "")
                 continue;
-              let l1 = this.data.chara.length;
-              this.data.chara[l1] = key;
-              let l2 = this.data.wordlist.length;
-              this.data.wordlist[l2] = dict[key];
+              let l1 = chara.length;
+              chara[l1] = key;
+              let l2 = wordlist.length;
+              wordlist[l2] = dict[key];
           }
-          console.log(dict);
-          console.log(this.data.chara);
-          console.log(this.data.wordlist);
+          that.setData({'chara':chara});
+          that.setData({'wordlist':wordlist});
         },
         fail: (res)=>{
           console.log(res);
