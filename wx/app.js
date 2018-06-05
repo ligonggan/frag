@@ -4,21 +4,36 @@ App({
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    logs.unshift(Date.now());
+    wx.setStorageSync('logs', logs);
 
     // 登录
     wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      success: (res) => {
+        // 发送 res.code 到后台换取 openId
         var code = res.code;
         if (code) {
-          this.globalData.userInfo = "0000000000000000000000000000";
-          console.log('获取用户登录凭证：' + code);
+          //发送请求到后台
+          var that = getApp();
+          wx.request({
+              url: "https://fragmentenglish.gsxab.top/login",
+              header:{'Content-Type': 'application/json'},
+              method: "POST",
+              data: {
+                code: res.code,
+              },
+              success: (res1)=>{
+                console.log("获取用户的openid"+res1.data.id);
+                that.globalData.userInfo = res1.data.id;
+                console.log(code);
+                console.log((res1.data.id==""));
+              },
+          });
+          console.log('获取用户登录凭证：' + res.code);
         }
       }
-    })
-    this.globalData.userInfo = "0000000000000000000000000000";
+    });
+    //this.globalData.userInfo = "0000000000000000000000000000";
   },
     // 获取用户信息
     getUserInfo: function(cb) {
@@ -34,7 +49,7 @@ App({
                 that.globalData.user = res.userInfo;
                 typeof cb == "function" && cb(that.globalData.user)
               }
-            })
+            });
           }
         });
       }
