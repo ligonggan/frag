@@ -18,6 +18,13 @@ Page({
       searchValue:e.detail.value
     })
   },
+  searchold :function(event){
+    var query = event.target.dataset.item
+    if (query.trim() == '') return;
+    wx.navigateTo({
+      url: '../result/result?query=' + query
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
