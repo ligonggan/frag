@@ -7,6 +7,11 @@ App({
     logs.unshift(Date.now());
     wx.setStorageSync('logs', logs);
 
+    wx.showToast({
+      title: '登录中，请稍等',
+      icon: 'loading',
+      duration: 2000
+    });
     // 登录
     wx.login({
       success: (res) => {
@@ -24,7 +29,7 @@ App({
               },
               success: (res1)=>{
                 that.globalData.userInfo = res1.data.id;
-                
+                wx.hideToast();
               },
           });
         }
