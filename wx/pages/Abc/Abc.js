@@ -68,7 +68,6 @@ Page({//添加了四个属性@Raineast
           success: (data)=>{
               var jsonStr = data.data.replace(/\ufeff/g, "");
               var jj = JSON.parse(jsonStr);
-              console.log(jj);
               //that.setData({ "query": jj.query });
               //that.data.query=jj.query;
               that.setData({ "translation": jj.translation });
@@ -152,7 +151,6 @@ Page({//添加了四个属性@Raineast
         },
         success: (res)=>{
           list = res.data;
-          console.log(list)
           this.showTheWord(list);
         },
         fail: (res)=>{
@@ -185,6 +183,6 @@ Page({//添加了四个属性@Raineast
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getNotebook();
+    this.getWordList();
   },
 })

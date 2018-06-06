@@ -65,7 +65,6 @@ Page({
       success: function (data) {
         var jsonStr = data.data.replace(/\ufeff/g, "");
         var jj = JSON.parse(jsonStr);
-        console.log(jj);
         that.setData({ "query": jj.query });
         that.data.query=jj.query;
         that.setData({ "translation": jj.translation });
@@ -106,7 +105,6 @@ Page({
         that.setData({ "query": data.code});
       }
     });
-    console.log(this.data.usphon)
     this.addHistory();  //此处进行添加历史记录的操作
   },
 
@@ -123,7 +121,6 @@ Page({
               word: this.data.query,
           },
           success: (res)=>{
-              console.log(res);
               console.log(app.globalData.userInfo);
           },
           fail: (res)=>{
@@ -133,8 +130,6 @@ Page({
   },
 
   changesel:function (event) {
-    console.log(this.data.available)
-    console.log("SELECTED:" + this.data.selected);
     if(this.data.available == false)
         return;
     //判断是增加还是消除
@@ -149,15 +144,12 @@ Page({
 
    add: function(){
     //添加单词到生词本@Raineast
-    console.log(this.data.exist);
     if(this.data.available == false)
         return;
     if(this.data.exist == true)
         return;
     let that = this;
     let word = this.data.query;
-
-    console.log(app.globalData.userInfo);
     wx.request({
         url: "https://fragmentenglish.gsxab.top/notebooks/"+word,
         method: "PUT",
@@ -182,7 +174,6 @@ Page({
     //if(this.data)
     let that = this;
     let word = this.data.query;
-    console.log(app.globalData.userInfo);
     wx.request({
        url:  "https://fragmentenglish.gsxab.top/notebooks/delete/"+word,
        method: "POST",
@@ -207,11 +198,8 @@ Page({
     innerAudioContext.autoplay = true
     innerAudioContext.src =this.data.ukspeech
     innerAudioContext.onPlay(() => {
-      console.log('开始播放')
     })
     innerAudioContext.onError((res) => {
-      console.log(res.errMsg)
-      console.log(res.errCode)
     })
   },
 
@@ -221,7 +209,6 @@ Page({
            return;
        let that = this;
        let word = this.data.query;//获取单词
-       console.log(app.globalData.userInfo);
        wx.request({
            url: "https://fragmentenglish.gsxab.top/notebooks/exist/"+word,
            method: "POST",
@@ -230,10 +217,7 @@ Page({
              userId: app.globalData.userInfo,
            },
            success: (res)=>{
-             console.log(app.globalData.userInfo);
              that.setData({"exist": res.data.found});
-             console.log(res);
-             console.log(that.data.exist);
              if(res.data.found == true){
                  that.setData({"selected": 1});
              }

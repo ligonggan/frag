@@ -31,7 +31,6 @@ Page({
   onLoad: function (options) {
     //获取历史纪录
     let that = this;
-    console.log("load first")
     wx.request({
         url: "https://fragmentenglish.gsxab.top/history",
         method: "POST",

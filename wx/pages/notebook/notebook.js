@@ -19,7 +19,6 @@ Page({
       this.getNotebook();
   },
   getNotebook: function(){//获取生词表
-      console.log(app.globalData.userInfo);
       var that = this;
       //var that=this
       wx.request({
@@ -32,8 +31,6 @@ Page({
           userId: app.globalData.userInfo
         },
         success: (res)=>{
-          console.log("***")
-          console.log(res)
           dict = res.data;
           var chara=[];
           var wordlist=[];
@@ -47,7 +44,6 @@ Page({
           }
           that.setData({'chara':chara});
           that.setData({'wordlist':wordlist});
-          console.log(wordlist)
         },
         fail: (res)=>{
           console.log(res);

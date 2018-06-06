@@ -23,7 +23,6 @@ Page({
     })  
   },
   enter:function(){
-    console.log("enter")
     wx.switchTab({
       url: '../search/search',   
     })

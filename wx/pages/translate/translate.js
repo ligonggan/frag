@@ -23,27 +23,22 @@ Page({
     })
   },
   changelan: function (event) {
-    console.log("click")
     var s = 'op'
     var param = {};
-    console.log(this.op)
     if(this.op==true) 
     {
       param[s] = false;
       this.op=false;
-      console.log("false")
     }
     else{
       this.op = true;
       param[s] = true;
     }
     this.setData(param);
-    console.log(this.op)
 
   },
   trans:function(event){
     var query = this.data.totrans
-    console.log(query)
     var that = this
     var appKey = '6d963f5e7cb10b13';
     var key = 'oWLnbiqEGyUsZLNGwt73RiL5VReRNZLA';//注意：暴露appSecret，有被盗用造成损失的风险
@@ -73,7 +68,6 @@ Page({
         var jsonStr = data.data.replace(/\ufeff/g, "")
         var jj = JSON.parse(jsonStr);
         that.data.transre=jj;
-        console.log(jj)
         that.setData({"transre":jj.translation});
       }
     }

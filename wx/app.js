@@ -23,13 +23,10 @@ App({
                 code: res.code,
               },
               success: (res1)=>{
-                console.log("获取用户的openid"+res1.data.id);
                 that.globalData.userInfo = res1.data.id;
-                console.log(code);
-                console.log((res1.data.id==""));
+                
               },
           });
-          console.log('获取用户登录凭证：' + res.code);
         }
       }
     });
