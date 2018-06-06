@@ -173,7 +173,6 @@ Page({//添加了四个属性@Raineast
     });
     this.getWordList();
 
-
     // this.setData({
     //   content: word.content,
     //   pron: word.pron,
@@ -181,5 +180,11 @@ Page({//添加了四个属性@Raineast
     //   audio: word.audio
     // })
 
-  }
+  },
+   /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.getNotebook();
+  },
 })

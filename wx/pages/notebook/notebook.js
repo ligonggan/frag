@@ -47,6 +47,7 @@ Page({
           }
           that.setData({'chara':chara});
           that.setData({'wordlist':wordlist});
+          console.log(wordlist)
         },
         fail: (res)=>{
           console.log(res);
@@ -64,7 +65,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.getNotebook();
   },
 
   /**
