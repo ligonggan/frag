@@ -8,8 +8,8 @@ Page({
    */
   data: {
     searchValue:'',
-    sentence:'Our teachers is so crazy that they left us so much work',
-    translate:'我们老师留了那么多作业了真是疯了',
+    sentence:'You are not in charge of the universe; you are in charge of yourself.',
+    translate:'你并不掌管整个宇宙，但你得掌管你自己。',
     items: ["homework","too","much","teacher","killer"]
   
   },
@@ -23,6 +23,7 @@ Page({
    */
   search:function(event){
     var query = this.data.searchValue
+    if(query.trim()=='') return;
     wx.navigateTo({
       url: '../result/result?query=' + query
     })

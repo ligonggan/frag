@@ -41,10 +41,12 @@ Page({
     // 多个query可以用\n连接  如 query='apple\norange\nbanana\npear'
     var from = 'en';
     var to = 'zh-CHS';
+    this.data.available = true;
     var reg = /^[\u4e00-\u9fa5]+$/;
     if (reg.test(query)) {
       from = 'zh-CHS';
       to = 'en';
+      this.data.available=false;
     }
     var str1 = appKey + query + salt + key;
     var sign = util.md5(str1);
