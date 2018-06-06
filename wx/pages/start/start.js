@@ -23,9 +23,12 @@ Page({
     })  
   },
   enter:function(){
-    wx.switchTab({
-      url: '../search/search',   
-    })
+    if (app.globalData.userInfo != null) { 
+      wx.switchTab({
+        url: '../search/search',   
+      })
+    } else {
+    }
   },
 
   /**
