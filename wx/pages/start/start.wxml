@@ -1,5 +1,3 @@
 <!--pages/start/start.wxml-->
-<view class="logo">
-<image class="avatar" src="{{user.avatarUrl}}" background-size="aspectFill"></image>  
-</view>
+<image class="avatar" src="{{user.avatarUrl}}"></image>  
 <button class="button"bindtap="enter"> 进入</button> 
