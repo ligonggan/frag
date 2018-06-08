@@ -20,6 +20,7 @@ Page({
   },
   searchold :function(event){
     var query = event.target.dataset.item
+    console.log(event.target)
     if (query.trim() == '') return;
     wx.navigateTo({
       url: '../result/result?query=' + query

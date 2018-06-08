@@ -20,8 +20,8 @@
   <strong class="title">历史记录</strong>
   <view class="historylist"wx:for="{{items}}" wx:for-index="index" wx:for-item="item">
     <view class='historyitem' data-item='{{item}}' bindtap='searchold'>
-    <icon size='13' type='search'></icon>  
-    <text class='item-detail'>{{item}}</text>
+    <icon size='13' type='search'data-item='{{item}}' bindtap='searchold'></icon>  
+    <text class='item-detail'data-item='{{item}}' bindtap='searchold'>{{item}}</text>
     </view>
   </view>
 </view>
