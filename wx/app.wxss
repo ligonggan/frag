@@ -23,7 +23,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/*本项目使用的18个图标  */
+/*本项目使用的图标  */
 .icon-zhiding:before{content: '\e626';}
 .icon-show:before{content: '\e684';}
 .icon-hide:before{content: '\e72c';}

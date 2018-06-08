@@ -8,7 +8,7 @@ App({
     wx.setStorageSync('logs', logs);
 
     wx.showToast({
-      title: '登录中，请稍等',
+      title: '获取信息中',
       icon: 'loading',
       duration: 2000
     });
